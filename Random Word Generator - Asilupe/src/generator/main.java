@@ -5,7 +5,7 @@ import java.util.SplittableRandom;
 public class main {
     static SplittableRandom rand = new SplittableRandom();
     public static void main(String[] args) {
-        //Phoneme.genPhonemes();
+        /*Phoneme.genPhonemes();*/
         /*String s = "";
         String sa = "";
         Utils.genTableau();
@@ -19,10 +19,10 @@ public class main {
         Phoneme.genererSyllabe();*/
              
         for(int i=0; i < 15;i++){
-        int r = rand.nextInt(1);
+        boolean b = rand.nextBoolean();
         
-        String s = Utils.genRadical(r);
-        s += Phoneme.genEnd(r);
+        String s = Utils.genRadical(b);
+        s += Phoneme.genEnd(b);
         
         System.out.println(s);
         }

@@ -1,7 +1,6 @@
 package jjeu;
 
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 import org.apache.commons.lang3.ArrayUtils;
 
 public class Jjeu {
@@ -77,7 +76,6 @@ public class Jjeu {
                 case 7:
                     nbr7++;
                     break;
-                
             }
         }        
         System.out.println(nbr1/mult);        

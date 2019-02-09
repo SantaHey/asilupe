@@ -5,17 +5,20 @@
     android:padding="@dimen/padding_ligne">
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <RadioButton
+            android:id="@+id/radioBien"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/padding_radio"
             android:text="@string/bon_mot" />
 
         <RadioButton
+            android:id="@+id/radioPasBien"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingHorizontal="@dimen/padding_radio"
@@ -23,12 +26,13 @@
     </RadioGroup>
 
     <TextView
+        android:id="@+id/mot"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:paddingHorizontal="@dimen/padding_mot"
         android:gravity="fill"
         android:textColor="@color/colorGreyDark"
-        android:textSize="16dp"
+        android:textSize="20dp"
         android:text="@string/mot_message" />
 
 </LinearLayout>

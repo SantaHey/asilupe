@@ -1,6 +1,5 @@
 package generator;
 
-import java.util.ArrayList;
 import java.util.SplittableRandom;
 
 public class Utils {
@@ -8,7 +7,6 @@ public class Utils {
     static SplittableRandom rand = new SplittableRandom();
     static String sPrevious;
 
-    
     static String[] voyelles = {"i","ou","u","a","â","an","eau","o","on","é","ai","in","eu","un","e","oi"};
     static String[] consonnes = {"f","v","s","z","ch","j","l","r","p","b","m","t","d","n","c","gu","gn","y"};
     
@@ -52,7 +50,6 @@ public class Utils {
             
             radical += s;
         }
-        
         
         return radical;
     }

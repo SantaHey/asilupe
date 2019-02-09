@@ -1,4 +1,4 @@
-package logatome;
+package asilupe;
 
 import java.io.IOException;
 
@@ -9,9 +9,7 @@ public class Main {
         Structure s = new Structure("1010", false, true);
         
         for(int i = 0; i < 15; i++){
-            System.out.println(new Word(s).build());
+            System.out.println(new Word(s).getMotComplet());
         }
-        
     }
-    
 }

@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <ListView
+        android:layout_marginTop="@dimen/padding_ligne"
         android:id="@+id/logatome_list_view"
         android:layout_width="match_parent"
         android:layout_height="290dp"
@@ -16,10 +17,12 @@
     </ListView>
 
     <Button
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="@dimen/hauteur"
+        android:text="VALIDER ET GENERER"
+        android:textSize="25dp"
         android:clickable="false"
         android:layout_margin="50dp" />
-
 
 </LinearLayout>

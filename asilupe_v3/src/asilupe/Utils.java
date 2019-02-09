@@ -3,26 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logatome;
+package asilupe;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.*;
+import java.util.*;
+import java.util.logging.*;
 
 /**
  *
- * 0 = cnsonne
+ * 0 = consonne
  * 1 = voyelle
  */
 public class Utils {
@@ -70,11 +59,11 @@ public class Utils {
     private static void initFixLists() throws IOException{
         
         InputStream stream = Utils.class.getResourceAsStream("res/prefixes.txt");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
         prefixes = Arrays.asList(reader.readLine().split(", "));
         
         stream = Utils.class.getResourceAsStream("res/suffixes.txt");
-        reader = new BufferedReader(new InputStreamReader(stream));
+        reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
         suffixes = Arrays.asList(reader.readLine().split(", "));
         
     }
@@ -95,17 +84,18 @@ public class Utils {
     }
     
     //jai carrément recopié ton code pd alors tu commenteras toi...
-    public static String genRadical(boolean[] bs){
-        String sPrevious, radical = "", s = "";
+    public static ArrayList<String> genRadical(boolean[] bs){
+        String sPrevious, s = "";
+        ArrayList<String> phonemes = new ArrayList<>();
+        
         for (boolean b: bs) {
             do {
                 sPrevious = s;
                 s = (!b) ? choose(constrvoyelles) : choose(constrconsonnes);
             } while (s.equals(sPrevious));
-            
-            radical += s;
+            phonemes.add(s);
         }
-        return radical;
+        return phonemes;
     }
     
     //générer un prefixe. b correspond à la nature de la lettre suivant le préfixe
@@ -142,8 +132,7 @@ public class Utils {
         do {
             suf = suffixes.get(rand.nextInt(suffixes.size()));
             pass = (voyelles.contains(suf.substring(0, 1)) == b);
-        }
-        while(!pass);
+        } while(!pass);
         return suf;
     }
 }

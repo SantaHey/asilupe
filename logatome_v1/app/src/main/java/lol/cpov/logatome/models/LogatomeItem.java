@@ -1,16 +1,14 @@
 package lol.cpov.logatome.models;
 
-public class LogatomeItem {
-    private String mot;
-    private boolean motBien;
+import asilupe.Word;
 
-    public LogatomeItem(String mot){
-        this.mot = mot;
+public class LogatomeItem {
+    private Word word;
+
+    public LogatomeItem(Word word){
+        this.word = word;
     }
 
-    public String getMot() { return mot; }
-    public boolean getMotBien() { return motBien; }
-
-    public void setMot(String s) { this.mot = s; }
-    public void setMotBien(boolean b) { this.motBien = b; }
+    public Word getWord() { return word; }
+    public void setWord(Word w) { this.word = w; }
 }

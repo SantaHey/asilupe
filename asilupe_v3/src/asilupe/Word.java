@@ -10,7 +10,7 @@ public class Word {
     //sa seule fonction est Build.
     
     private Structure structure;
-    private boolean motBien;
+    private Boolean motBien = null;
     private String prefixe, suffixe, motComplet;
     private ArrayList<String> phonemes;
 
@@ -31,7 +31,7 @@ public class Word {
         //variables
         String radical = "", prefix = "", suffix = "", word;
         boolean pref = structure.getFirstLetter(), suf = structure.getLastLetter();
-        ArrayList<String> phonemes = new ArrayList<String>();
+        ArrayList<String> phonemes = new ArrayList<>();
         
         //assignation valeurs
         if(structure.getHasPref()){
@@ -58,7 +58,7 @@ public class Word {
     public Structure getStructure() {
         return this.structure;
     }
-    public boolean getMotBien() {
+    public Boolean getMotBien() {
         return this.motBien;
     }
     public String getPrefixe() {
@@ -77,7 +77,7 @@ public class Word {
     public void setStructure(Structure struc) {
         this.structure = struc;
     }
-    public void setMotBien(boolean b) {
+    public void setMotBien(Boolean b) {
         this.motBien = b;
     }
 }

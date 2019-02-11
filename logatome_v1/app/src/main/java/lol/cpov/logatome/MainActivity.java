@@ -27,15 +27,15 @@ public class MainActivity extends AppCompatActivity {
         logatomeListView = findViewById(R.id.logatome_list_view);
 
         logatomeItemList = new ArrayList<>();
-
-        genererMots();
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 genererMots();
             }
         });
+
+
+        genererMots();
     }
 
     public void testRadios() {

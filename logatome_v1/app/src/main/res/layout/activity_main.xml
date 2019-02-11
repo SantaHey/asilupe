@@ -8,10 +8,10 @@
     tools:context=".MainActivity">
 
     <ListView
-        android:layout_marginTop="@dimen/padding_ligne"
         android:id="@+id/logatome_list_view"
         android:layout_width="match_parent"
         android:layout_height="290dp"
+        android:layout_marginTop="50dp"
         android:divider="@null">
 
     </ListView>

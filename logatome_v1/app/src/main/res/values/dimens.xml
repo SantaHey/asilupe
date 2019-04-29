@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="hauteur">100dp</dimen>
-    <dimen name="padding_ligne">15dp</dimen>
-    <dimen name="padding_radio">3dp</dimen>
-    <dimen name="padding_mot">25dp</dimen>
+    <dimen name="hauteur">150dp</dimen>
 </resources>

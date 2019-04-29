@@ -1,7 +1,3 @@
 <resources>
     <string name="app_name">logatome</string>
-    <string name="mauvais_mot">:(</string>
-    <string name="bon_mot">xD</string>
-    <string name="mot_message">logatome</string>
-    <string name="btn_message">VALIDER ET REGENERER</string>
 </resources>

@@ -212,14 +212,13 @@ public class MainActivity extends AppCompatActivity implements View.OnDragListen
         InputStream inputStream;
         BufferedReader reader;
 
-        inputStream = getResources().openRawResource(R.raw.crendentials);
+        inputStream = getResources().openRawResource(R.raw.credsftp);
 
         reader = new BufferedReader(new InputStreamReader(inputStream));
 
         try {
             for (int i = 0; i < credentials.length; i++) {
                 credentials[i] = reader.readLine();
-                Log.d("dfsdf", credentials[i]);
             }
         } catch (IOException e) {
             e.printStackTrace();

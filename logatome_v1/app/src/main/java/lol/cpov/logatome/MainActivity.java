@@ -208,24 +208,38 @@ public class MainActivity extends AppCompatActivity implements View.OnDragListen
     }
 
     public String[] getCredentials(){
-        String[] credentials = {"ftp.exemple.com", "/", "user", "password"};
+        // Retourne les données {url, path, user, password}
+
         InputStream inputStream;
         BufferedReader reader;
 
-        inputStream = getResources().openRawResource(R.raw.credsftp);
+        // Valeurs utilisées si le fichier raw/credsftp n'existe pas
+        String[] credentials = {"ftp.exemple.com", "/", "user", "password"};
 
-        reader = new BufferedReader(new InputStreamReader(inputStream));
+        // Si le fichier raw/credsftp existe, va chercher les données dedans
+        /*  Structure du fichier
+                url ftp + port
+                ftp path
+                user
+                password
+        */
+        int credsftp = getResources().getIdentifier("credsftp", "raw", getPackageName());
+        if (credsftp != 0) {
+            try {
+                inputStream = getResources().openRawResource(credsftp);
+                reader = new BufferedReader(new InputStreamReader(inputStream));
 
-        try {
-            for (int i = 0; i < credentials.length; i++) {
-                credentials[i] = reader.readLine();
+                for (int i = 0; i < credentials.length; i++) {
+                    credentials[i] = reader.readLine();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
         return credentials;
     }
+
 
     public static boolean checkFileExists(String filename, FTPClient client) throws IOException {
         InputStream inputStream = client.retrieveFileStream(filename);
